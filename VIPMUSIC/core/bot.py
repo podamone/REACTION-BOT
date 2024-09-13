@@ -1,6 +1,6 @@
 
 import pyrogram
-from pyrogram import Client, filters
+from pyrogram import Client
 import config
 
 
