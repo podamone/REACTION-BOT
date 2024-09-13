@@ -17,7 +17,7 @@ from VIPMUSIC.core.bot import VIPBot
 # Directories
 
 
-app = VIPBot()
+app = VIPBot(bot_token, bot_number)
 
 # Assistant Client
 
