@@ -23,7 +23,7 @@ API_HASH = getenv("API_HASH")
 
 
 ## Get it from @Botfather in Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN")
+BOT_TOKEN1 = getenv("BOT_TOKEN1")
 BOT_TOKEN2 = getenv("BOT_TOKEN2")
 BOT_TOKEN3 = getenv("BOT_TOKEN3")
 BOT_TOKEN4 = getenv("BOT_TOKEN4")
@@ -49,7 +49,7 @@ BOT_TOKEN20 = getenv("BOT_TOKEN20")
 
 EXTRA_PLUGINS = getenv(
     "EXTRA_PLUGINS",
-    "True",
+    "False",
 )
 
 # Fill True if you want to load extra plugins
