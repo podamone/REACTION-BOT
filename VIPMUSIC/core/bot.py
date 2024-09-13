@@ -1,12 +1,10 @@
-import uvloop
-import pyrogram
-import pyromod.listen  # noqa
-from pyrogram import Client
-from pyrogram.enums import ChatMemberStatus
-import config
-from ..logging import LOGGER
 
-uvloop.install()
+import pyrogram
+from pyrogram import Client, filters
+import config
+
+
+
 
 class VIPBot(Client):
     def __init__(self, bot_token: str, bot_number: int):
