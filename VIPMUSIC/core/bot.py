@@ -1,3 +1,4 @@
+import asyncio
 from pyrogram import Client, idle
 from .logger import LOGGER
 from config import BOT_TOKENS, API_HASH, API_ID
