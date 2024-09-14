@@ -1,4 +1,7 @@
-from pyrogram import Client
+from pyrogram import Client, idle
+from .logger import LOGGER
+
+log = LOGGER(__name__)
 
 class Bots:
     def __init__(self, tokens):
@@ -28,3 +31,14 @@ class Bots:
             await client.stop()
         self.clients.clear()
         self.client_ids.clear()
+
+    def setup(self):
+        loop = asyncio.get_event_loop_policy().get_event_loop()
+        async def start():
+            log.info("Starting All bots")
+            await self.start()
+            await idle()
+            log.info("Stoping All bots...\nGoodBye")
+            await self.stop()
+
+        loop.run_until_complete(start())
