@@ -24,7 +24,7 @@
         "value": "",
         "required": true
       },
-      "
+      
       "BOT_TOKENS": {
         "description": "A Bot's token Get it from @Botfather",
         "value": "",
