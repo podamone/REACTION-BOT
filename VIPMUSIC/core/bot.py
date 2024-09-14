@@ -13,7 +13,8 @@ class Bots:
     async def start(self):
         self.clients.clear()
         self.client_ids.clear()
-        
+        log.info("Starting bots...")
+
         for i, token in enumerate(self.tokens):
             client = Client(
                 f"client_{i}",
@@ -24,6 +25,8 @@ class Bots:
                 in_memory=True,
             )
             await client.start()
+            log.info(f"Bot {i} as Started as {client.me.first_name}")
+
             self.clients.append((client, client.me.id))
             self.client_ids.append(client.me.id)
 
@@ -36,7 +39,6 @@ class Bots:
     def setup(self):
         loop = asyncio.get_event_loop_policy().get_event_loop()
         async def start():
-            log.info("Starting All bots")
             await self.start()
             await idle()
             log.info("Stoping All bots...\nGoodBye")
