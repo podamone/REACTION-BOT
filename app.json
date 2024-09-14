@@ -25,8 +25,8 @@
         "required": true
       },
       "BOT_TOKENS": {
-        "description": "you can fill multiple bot tokens seperated by comma",
-        "value": "",
+        "description": "you can fill multiple bot tokens seperated by comma example below see",
+        "value": "token1, token2, tokn3 like you can add many",
         "required": true
       }, 
     },
