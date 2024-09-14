@@ -16,7 +16,7 @@ class Bots:
         self.client_ids.clear()
         log.info("Starting bots...")
 
-        for i, token in enumerate(self.tokens):
+        for i, token in enumerate(self.tokens, start=1):
             client = Client(
                 f"client_{i}",
                 api_id=API_ID,
