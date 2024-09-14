@@ -1,11 +1,12 @@
 from pyrogram import Client, idle
 from .logger import LOGGER
+from config import BOT_TOKENS
 
 log = LOGGER(__name__)
 
 class Bots:
-    def __init__(self, tokens):
-        self.tokens = tokens
+    def __init__(self):
+        self.tokens = BOT_TOKENS
         self.clients = []
         self.client_ids = []
 
