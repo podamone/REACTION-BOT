@@ -1,6 +1,6 @@
 {
     "name": "VIPMUSIC",
-    "description": "Telegram Group Calls streaming bot with some useful features, written in Python with Pyrogram and Py-Tgcalls. Supporting platforms like Youtube, Spotify, Resso, AppleMusic, Soundcloud and M3u8 Links.",
+    "description": "Auto reaction bot .",
     "logo": "https://graph.org/file/c0e014ff34f34d1056627.png",
     "keywords": [
     "python3",
@@ -24,12 +24,11 @@
         "value": "",
         "required": true
       },
-      
       "BOT_TOKENS": {
-        "description": "A Bot's token Get it from @Botfather",
+        "description": "you can fill multiple bot tokens seperated by comma",
         "value": "",
         "required": true
-      }
+      }, 
     },
     "buildpacks": [
           {
