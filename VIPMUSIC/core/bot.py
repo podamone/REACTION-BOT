@@ -2,6 +2,9 @@ import asyncio
 from pyrogram import Client, idle
 from .logger import LOGGER
 from config import BOT_TOKENS, API_HASH, API_ID
+from typing import Callable, Optional
+
+import pyrogram
 
 log = LOGGER(__name__)
 
@@ -46,3 +49,14 @@ class Bots:
             await self.stop()
 
         loop.run_until_complete(start())
+
+
+    def on_cmd(
+        filters: Optional[pyrogram.filters.Filter] = None, group: int = 0
+    ) -> Callable:
+        def decorator(func: Callable) -> Callable:
+            for client in clients:
+                client.add_handler(pyrogram.handlers.MessageHandler(func, filters), group)
+            return func
+
+        return decorator
