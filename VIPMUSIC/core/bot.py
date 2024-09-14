@@ -1,6 +1,6 @@
 from pyrogram import Client, idle
 from .logger import LOGGER
-from config import BOT_TOKENS
+from config import BOT_TOKENS, API_HASH, API_ID
 
 log = LOGGER(__name__)
 
@@ -18,8 +18,8 @@ class Bots:
         for i, token in enumerate(self.tokens):
             client = Client(
                 f"client_{i}",
-                api_id=config.API_ID,
-                api_hash=config.API_HASH,
+                api_id=API_ID,
+                api_hash=API_HASH,
                 bot_token=token,
                 plugins=dict(root="VIPMUSIC/plugins"),
                 in_memory=True,
