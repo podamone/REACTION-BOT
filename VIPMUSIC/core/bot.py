@@ -31,11 +31,11 @@ class Bots:
             await client.start()
             log.info(f"Bot {i} as Started as {client.me.first_name}")
 
-            self.clients.append((client, client.me.id))
+            self.clients.append(client)
             self.client_ids.append(client.me.id)
 
     async def stop(self):
-        for client, _ in self.clients:
+        for client in self.clients:
             await client.stop()
         self.clients.clear()
         self.client_ids.clear()
@@ -55,7 +55,7 @@ class Bots:
         filters: Optional[pyrogram.filters.Filter] = None, group: int = 0
     ) -> Callable:
         def decorator(func: Callable) -> Callable:
-            for client in clients:
+            for client in self.clients:
                 client.add_handler(pyrogram.handlers.MessageHandler(func, filters), group)
             return func
 
