@@ -2,7 +2,7 @@ import asyncio
 import random
 from pyrogram import Client, filters
 from pyrogram.types import Message
-
+from VIPMUSIC import app
 # List of reactions
 reactions = [
     "👍", "👎", "❤️", "🔥", "🥳", "👏", "😁", "😂", "😲", "😱", 
@@ -19,7 +19,7 @@ async def react_to_message(client: Client, message: Message):
     await message.react(emoji)
 
 
-@Client.on_cmd(filters.command(["starrt", "helpp"])) #try karo agar nahi work karan to hata dena 
+@app.on_cmd(filters.command(["starrt", "helpp"])) #try karo agar nahi work karan to hata dena 
 async def start_help_command(client: Client, message: Message):
     await message.reply_text("I am an auto reaction bot. Add me in group or channels for auto react on your posts.")
 
