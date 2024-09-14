@@ -16,12 +16,8 @@ reactions = [
 ]
 
 
-@Client.on_message(filters.text)
+@Client.on_message(group=1)
 async def react_to_message(client: Client, message: Message):
-    """
-    This function reacts to any message with a random reaction from the 'reactions' list.
-    """
-    
     emoji = random.choice(reactions)
     await message.react(emoji)
 
